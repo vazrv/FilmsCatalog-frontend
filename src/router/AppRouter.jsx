@@ -1,17 +1,25 @@
 // src/router/AppRouter.jsx
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Header, HomePage } from '../components';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Header, HomePage, ProfilePage } from "../components";
 
 export const AppRouter = () => {
-    return (
-        <BrowserRouter>
-            <>
-                <Header />
-                <Routes>
-                    <Route path="/" element={<HomePage />} />
-                    {/* Другие маршруты будут добавлены позже */}
-                </Routes>
-            </>
-        </BrowserRouter>
-    );
+  return (
+    <BrowserRouter
+      future={{
+        v7_startTransition: true,
+        v7_relativeSplatPath: true,
+      }}
+    >
+      <>
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          {/* Другие маршруты */}
+        </Routes>
+      </>
+    </BrowserRouter>
+  );
 };
+
+export default AppRouter;
