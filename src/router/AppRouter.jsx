@@ -1,6 +1,7 @@
 // src/router/AppRouter.jsx
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Header, HomePage, ProfilePage } from "../components";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Header, HomePage, LoginPage, ProfilePage, RegisterPage } from '@components';
+
 
 export const AppRouter = () => {
   return (
@@ -14,12 +15,11 @@ export const AppRouter = () => {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
           <Route path="/profile" element={<ProfilePage />} />
-          {/* Другие маршруты */}
         </Routes>
       </>
     </BrowserRouter>
   );
 };
-
-export default AppRouter;

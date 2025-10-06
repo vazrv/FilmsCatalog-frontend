@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 // src/components/pages/ProfilePage/ProfilePage.jsx
 import React from "react";
-import { fetchUserProfile } from "../../../services/profileService";
-import { userStore } from "../../../stores/userStore";
+import { fetchUserProfile } from "@services";
+import { userStore } from "@stores";
 
 export const ProfilePage = () => {
   const token = userStore((state) => state.token);
