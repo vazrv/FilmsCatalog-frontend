@@ -1,0 +1,1 @@
+export { getAllGenres } from "./genreService";

@@ -1,6 +1,6 @@
-import { useQuery } from "@tanstack/react-query";
 // src/components/pages/ProfilePage/ProfilePage.jsx
 import React from "react";
+import { useQuery } from "@tanstack/react-query";
 import { fetchUserProfile } from "@services";
 import { userStore } from "@stores";
 
@@ -53,25 +53,11 @@ export const ProfilePage = () => {
   return (
     <div className="max-w-4xl mx-auto p-6">
       <div className="bg-white shadow rounded-lg overflow-hidden">
-        {/* Header */}
-        <div
-          className="h-32 bg-gradient-to-r from-indigo-500 to-purple-600"
-          style={{
-            backgroundImage: user.backdrop_url ? `url(${user.backdrop_url})` : undefined,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
-
-        {/* Avatar + Info */}
-        <div className="px-6 pb-6 -mt-16 relative z-10">
-          <img
-            src={user.avatar_url || "/default-avatar.png"}
-            alt="Аватар"
-            className="w-24 h-24 rounded-full border-4 border-white shadow-lg object-cover"
-          />
-
-          <h1 className="text-3xl font-bold text-gray-800 mt-4">{user.username}</h1>
+        {/* Удалён блок с фоном */}
+        
+        {/* Информация о пользователе */}
+        <div className="px-6 py-6">
+          <h1 className="text-3xl font-bold text-gray-800">{user.username}</h1>
           <p className="text-gray-500">{user.email}</p>
           <p className="text-sm text-gray-400">Зарегистрирован: {new Date(user.created_at).toLocaleDateString()}</p>
 
@@ -92,7 +78,7 @@ export const ProfilePage = () => {
           </div>
         </div>
 
-        {/* Stats */}
+        {/* Статистика */}
         <div className="bg-gray-50 px-6 py-4 grid grid-cols-3 gap-4 text-center">
           <div>
             <p className="text-2xl font-bold text-gray-800">{user.favorites_count || 0}</p>

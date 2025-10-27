@@ -1,0 +1,1 @@
+export { getPopularFilms } from "./filmService";

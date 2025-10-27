@@ -14,6 +14,9 @@ export const fetchUserProfile = async (token) => {
 
   if (!res.ok) {
     const err = await res.json().catch(() => ({}));
+    if (res.status === 401) {
+      throw new Error("Сессия истекла. Пожалуйста, войдите снова.");
+    }
     throw new Error(err.message || "Не удалось загрузить профиль");
   }
 

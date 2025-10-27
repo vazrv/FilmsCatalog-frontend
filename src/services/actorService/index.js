@@ -1,0 +1,1 @@
+export { getTopActors } from "./actorService";
